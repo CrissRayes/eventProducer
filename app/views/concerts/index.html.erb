@@ -1,0 +1,28 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Concerts</h1>
+
+<%= link_to "New concert", new_concert_path %>
+
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>Concert date:</th>
+        <th>Audience</th>
+        <th>Group</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+  <% @concerts.each do |concert| %>
+      <tr>
+        <td><%= concert.concert_date %></td>
+        <td><%= concert.audience %></td>
+        <td><%= concert.group %></td>
+        <td><%= link_to "Show", concert %></td>
+      </tr>
+  <% end %>
+    </tbody>
+  </table>
+</div>

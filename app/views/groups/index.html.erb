@@ -1,0 +1,33 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Groups</h1>
+
+<%= link_to "New group", new_group_path %>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Miembros</th>
+      <th>Fecha Debut</th>
+      <th>Conformación</th>
+      <th>Conciertos</th>
+      <th>Publico Total</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @groups.each do |group| %>
+    <tr>
+      <td><%= group.name %></td>
+      <td><%= group.members %></td>
+      <td><%= group.debut_date %></td>
+      <td><%= group.group_type %></td>
+      <td><%= group.concerts_count %></td>
+      <td><%= group.total_audience %></td>
+      <td><%= link_to "Show", group %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
